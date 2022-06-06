@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UsbSimulator.RawGadget\UsbSimulator.RawGadget.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Castle.Windsor" />
+    <None Remove="Castle.LoggingFacility" />
+    <None Remove="Serilog" />
+    <None Remove="Serilog.Sinks.Console" />
+    <None Remove="NLog" />
+    <None Remove="Castle.Core-Serilog" />
+    <None Remove="Castle.Core-NLog" />
+    <None Remove="nlog.config" />
+    <None Remove="Device.Net.LibUsb" />
+    <None Remove="LibUsbDotNet" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor" Version="5.1.1" />
+    <PackageReference Include="Castle.LoggingFacility" Version="5.1.1" />
+    <PackageReference Include="NLog" Version="4.7.12" />
+    <PackageReference Include="Castle.Core-NLog" Version="4.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
